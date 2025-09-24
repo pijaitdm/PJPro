@@ -43,7 +43,13 @@ void  PROSES_UTAMA(){
 			case 2 :
 					{
 					menu_navigasi(pilih);
-					std::cout << warna("Ini menu 1 !!\n", "option");
+					std::cout << warna("Ini menu 2 !!\n", "option");
+					break;
+					}
+			case 3 :
+					{
+					menu_navigasi(pilih);
+					std::cout << warna("Ini menu 3 !!\n", "option");
 					break;
 					}
 

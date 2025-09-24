@@ -5,8 +5,6 @@
 #include <iostream>
 #include <string>
 
-//fungsi c
-#include <stdio.h>
 
 //fungsi pembantu
 
