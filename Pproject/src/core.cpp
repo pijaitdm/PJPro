@@ -21,7 +21,7 @@ void  PROSES_UTAMA(){
 	do{
 		pilih = input_angka("Pilih : ");
 		if(pilih == 0){
-			batas_pilih = 5;
+			batas_pilih --;
 			std::cout << warna("Apakah ingin keluar/exit ? Tekan Y/n : ", "option");
 			char exit;
 			std::cin >> exit;
