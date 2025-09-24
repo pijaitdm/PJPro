@@ -16,7 +16,7 @@ void menu_navigasi(const int &pilihan_menu){
 void  PROSES_UTAMA(){
 	
 	menu_navigasi(-1);
-		
+	std::cout << warna("HOME\n","option");	
 		int batas_pilih = 5;
 		
 		int pilih;
@@ -56,15 +56,18 @@ void  PROSES_UTAMA(){
 			default :
 					{
 					menu_navigasi(pilih);
-					std::cout << pilih << std::endl;
-					std::cout << warna("Pilihan tidak ada !\n", "error");
+					std::cout << " batas : " << batas_pilih << std::endl;
+
+					std::cout << warna("Pilihan tidak ada!\nkembali ke Home\n\n", "error");
+					std::cout << warna("HOME\n","option");
 					batas_pilih--;
+					break;
 					}
 		}
 
-	}while(batas_pilih != 0);
+	}while(batas_pilih != -1 );
 	menu_navigasi(pilih);
-	if(batas_pilih == 0){
+	if(batas_pilih == -1){
 			std::cout << warna("Mohon maaf melebihi batas inputan\n","option");
 		}
 	std::cout << "Terima Kasih\n";
