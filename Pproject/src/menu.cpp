@@ -38,28 +38,25 @@ std::vector<std::string> submenu_arr(const int &pilihSubmenu){
 	return {"kosong"};
 }
 
-void submenu_1(const int &pilih_proses1){
-
-	std::vector<std::string> submenu_list1 = submenu_arr(1); // sub menu
-		if(pilih_proses1 >= 1 && pilih_proses1 <= 3){
-			submenu_list1[pilih_proses1 -1] = warna(submenu_list1[pilih_proses1 -1],"menu");
+void submenu_switch(const int &pilih_proses, const int &pilih_switch){
+	if(pilih_proses == 1){
+		std::vector<std::string> submenu_list1 = submenu_arr(pilih_proses);
+		if(pilih_switch >= 1 && pilih_switch <= 3){
+			submenu_list1[pilih_switch -1] = warna(submenu_list1[pilih_switch -1],"menu");
 		}
-
 		for(const auto &cetak : submenu_list1){std::cout << cetak;}
-		std::cout << std::endl;
+			std::cout << std::endl;
+	}
 
-}
-void submenu_2(const int &pilih_proses2){
-
-	std::vector<std::string> submenu_list2 = submenu_arr(2); // sub menu
-		if(pilih_proses2 >= 1 && pilih_proses2 <= 3){
-			submenu_list2[pilih_proses2 -1] = warna(submenu_list2[pilih_proses2 -1],"menu");
+	else if(pilih_proses == 2){
+		std::vector<std::string> submenu_list2 = submenu_arr(pilih_proses);
+		if(pilih_switch >= 1 && pilih_switch <= 3){
+			submenu_list2[pilih_switch -1] = warna(submenu_list2[pilih_switch -1],"menu");
 		}
-
 		for(const auto &cetak : submenu_list2){std::cout << cetak;}
-		std::cout << std::endl;
-
-}	
+			std::cout << std::endl;
+	}
+}
 
 void menu_navigasi(const int &pilihan){
 	clearScreen();
@@ -68,21 +65,9 @@ void menu_navigasi(const int &pilihan){
 	menu_utama(pilihan);
 }
 
-void submenu_navigasi(const int &pilihan_submenu){
-	clearScreen();
-	top_header();
-	menu_utama(pilihan_submenu);
-}
-
 void submenu(const int &pilih_menu){
 
-	if(pilih_menu == 1){
-		submenu_1(0);
-	}
-
-	else if(pilih_menu == 2){
-		submenu_2(0);
-	}
+	submenu_switch(pilih_menu,-1);
 
 	garis_batas(); 
 	int batas_pilih_submenu = 5;
@@ -100,58 +85,42 @@ void submenu(const int &pilih_menu){
 		switch(pilih_submenu){
 			case 1 :
 					{	
-					if(pilih_menu == 1){
-					submenu_navigasi(1);
-					submenu_1(pilih_submenu);	
-						std::cout << std::endl;
-						std::cout << warna("Ini menu sub 1!!\n", "option");
+						menu_navigasi(pilih_menu);
+						submenu_switch(pilih_menu,pilih_submenu);
+						if(pilih_menu == 1){
+							std::cout << "TODO PROSES INPUT UE LCR\n";
+						}
+						else if(pilih_menu == 2){
+							std::cout << "test sub menu 2\n";
+						}
 						break;
-					}
-					else if(pilih_menu == 2){
-					submenu_navigasi(2);
-					submenu_2(pilih_submenu);	
-						std::cout << std::endl;
-						std::cout << warna("Ini menu sub 2!!\n", "option");
-						break;
-					}
-
 					}
 			case 2 :
 					{	
-					if(pilih_menu == 1){
-					submenu_navigasi(1);
-					submenu_1(pilih_submenu);	
-						std::cout << std::endl;
-						std::cout << warna("Ini menu sub 2!!\n", "option");
+						menu_navigasi(pilih_menu);
+						submenu_switch(pilih_menu,pilih_submenu);
+						if(pilih_menu == 1){
+							std::cout << "TODO PROSES INPUT UE HARIAN\n";
+						}
+						else if(pilih_menu == 2){
+							std::cout << "test sub menu 2\n";
+						}
 						break;
-					}
-					else if(pilih_menu == 2){
-					submenu_navigasi(2);
-					submenu_2(pilih_submenu);	
-						std::cout << std::endl;
-						std::cout << warna("Ini menu sub 2!!\n", "option");
-						break;
-					}
 					}
 			case 3 :
 					{	
-					if(pilih_menu == 1){
-					submenu_navigasi(1);
-					submenu_1(pilih_submenu);	
-						std::cout << std::endl;
-						std::cout << warna("Ini menu sub 3!!\n", "option");
+						menu_navigasi(pilih_menu);
+						submenu_switch(pilih_menu,pilih_submenu);
+						if(pilih_menu == 1){
+							std::cout << "TODO PROSES INPUT Part Bongkaran\n";
+						}
+						else if(pilih_menu == 2){
+							std::cout << "test sub menu 2\n";
+						}
 						break;
-					}
-					else if(pilih_menu == 2){
-					submenu_navigasi(2);
-					submenu_2(pilih_submenu);	
-						std::cout << std::endl;
-						std::cout << warna("Ini menu sub 3!!\n", "option");
-						break;
-					}
 					}
 		}
 
 	}while(batas_pilih_submenu!=0);
-	submenu_navigasi(0);
+	menu_navigasi(-1);
 }	
