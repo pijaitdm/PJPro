@@ -1,28 +1,18 @@
 #include "headers.hpp"
-#include "util.hpp"
 #include "menu.hpp"
 
-void top_header(){
-	std::string  header = "[ " + waktu("hari") + " || " + "PJ Project Management Laporan" + " || " + waktu("tanggal") + " ]";
-	std::cout << warna(header, "") << std::endl<<std::endl;;
-}
 
-void menu_navigasi(const int &pilihan_menu){
-	clearScreen();
-	top_header();
-	menu_utama(pilihan_menu);
-}
 
 void  PROSES_UTAMA(){
 	
 	menu_navigasi(-1);
-	std::cout << warna("HOME\n","option");	
 		int batas_pilih = 5;
-		
+
 		int pilih;
-	do{
-		pilih = input_angka("Pilih : ");
 		
+	do{
+			std::cout << warna("HOME\n","option");	
+			pilih  = input_angka("Pilih Menu : ");
 			if(pilih == 0){
 				batas_pilih--;
 				std::cout << warna("Apakah ingin keluar/exit ? Tekan Y/n : ", "option");
@@ -37,13 +27,13 @@ void  PROSES_UTAMA(){
 			case 1 :
 					{
 					menu_navigasi(pilih);
-					std::cout << warna("Ini menu 1 !!\n", "option");
+					submenu(1);
 					break;
 					}
 			case 2 :
 					{
 					menu_navigasi(pilih);
-					std::cout << warna("Ini menu 2 !!\n", "option");
+					submenu(2);
 					break;
 					}
 			case 3 :
@@ -73,3 +63,5 @@ void  PROSES_UTAMA(){
 	std::cout << "Terima Kasih\n";
 
 }
+
+

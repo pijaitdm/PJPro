@@ -5,9 +5,9 @@
 std::string warna(const std::string &teks, const std::string &kondisi){
 
 	if(kondisi == "angka") {return  "\033[1;36m" + teks + "\033[0m";}
-	if(kondisi == "menu") {return  "\033[1;32m" + teks + "\033[0m";}
-	if(kondisi == "error") {return "\033[1;31m" + teks +"\033[0m";}
-	if(kondisi == "option"){return "\033[1;33m" + teks +"\033[0m";}
+	else if(kondisi == "menu") {return  "\033[1;32m" + teks + "\033[0m";}
+	else if(kondisi == "error") {return "\033[1;31m" + teks +"\033[0m";}
+	else if(kondisi == "option"){return "\033[1;33m" + teks +"\033[0m";}
 	return teks;
 }
 
@@ -22,13 +22,13 @@ std::string waktu(const std::string &pilih_waktu){
 
 		return tgl;
 	}
-	if(pilih_waktu == "hari"){
+	else if(pilih_waktu == "hari"){
 		std::string hari[8] = {"Minggu", "Senin", "Selasa",
 								"Rabu","Kamis","Jum'at","Sabtu"};
 				return hari[waktu_sistem->tm_wday];
 	}
 
-	if(pilih_waktu == "jam"){
+	else if(pilih_waktu == "jam"){
 		char jam[6];
 		std::strftime(jam, sizeof(jam), "%H-%M", waktu_sistem);
 		return jam;
@@ -60,7 +60,13 @@ int input_angka(const std::string &teks_angka){
 	return func_input_angka;
 }
 
-
+void garis_batas(){
+	std::string strip = "-";
+	for(int i = 0 ; i < 60; i++){
+		std::cout << strip ;
+	}
+	std::cout << std::endl;
+}
 
 void clearScreen() {
     std::cout << "\033[2J\033[1;1H";
