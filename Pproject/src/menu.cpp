@@ -33,12 +33,8 @@ std::vector<std::string> submenu_arr(const int &pilihSubmenu){
 	std::vector<std::string>submenu_1 = {"[1].input UE LCR ", "[2].input UE harian ", "[3].input part bongkaran"};
 	std::vector<std::string>submenu_2 = {"[1].Laporan Bulanan ","[2].Laporan LCR ","[3].Laporan Stok"};
 
-	if(pilihSubmenu == 1){
-		return submenu_1;
-	}
-	else if(pilihSubmenu == 2){
-		return submenu_2;
-	}
+	if(pilihSubmenu == 1){return submenu_1;}
+	else if(pilihSubmenu == 2){return submenu_2;}
 	return {"kosong"};
 }
 
@@ -81,11 +77,11 @@ void submenu_navigasi(const int &pilihan_submenu){
 void submenu(const int &pilih_menu){
 
 	if(pilih_menu == 1){
-		submenu_1(-1);
+		submenu_1(0);
 	}
 
 	else if(pilih_menu == 2){
-		submenu_2(-1);
+		submenu_2(0);
 	}
 
 	garis_batas(); 
