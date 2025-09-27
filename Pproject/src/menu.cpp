@@ -44,23 +44,23 @@ std::vector<std::string> submenu_arr(const int &pilihSubmenu){
 
 void submenu_1(const int &pilih_proses1){
 
-	std::vector<std::string> submenu_list = submenu_arr(1); // sub menu
+	std::vector<std::string> submenu_list1 = submenu_arr(1); // sub menu
 		if(pilih_proses1 >= 1 && pilih_proses1 <= 3){
-			submenu_list[pilih_proses1 -1] = warna(submenu_list[pilih_proses1 -1],"menu");
+			submenu_list1[pilih_proses1 -1] = warna(submenu_list1[pilih_proses1 -1],"menu");
 		}
 
-		for(const auto &cetak : submenu_list){std::cout << cetak;}
+		for(const auto &cetak : submenu_list1){std::cout << cetak;}
 		std::cout << std::endl;
 
 }
 void submenu_2(const int &pilih_proses2){
 
-	std::vector<std::string> submenu_list = submenu_arr(2); // sub menu
+	std::vector<std::string> submenu_list2 = submenu_arr(2); // sub menu
 		if(pilih_proses2 >= 1 && pilih_proses2 <= 3){
-			submenu_list[pilih_proses2 -1] = warna(submenu_list[pilih_proses2 -1],"menu");
+			submenu_list2[pilih_proses2 -1] = warna(submenu_list2[pilih_proses2 -1],"menu");
 		}
 
-		for(const auto &cetak : submenu_list){std::cout << cetak;}
+		for(const auto &cetak : submenu_list2){std::cout << cetak;}
 		std::cout << std::endl;
 
 }	
