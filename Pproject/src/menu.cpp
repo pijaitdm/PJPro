@@ -30,7 +30,7 @@ void menu_utama(const int &pilih_menu){
 
 
 std::vector<std::string> submenu_arr(const int &pilihSubmenu){
-	std::vector<std::string>submenu_1 = {"[1].input UE LCR ", "[2].input UE harian ", "[3].input part bongkaran"};
+	std::vector<std::string>submenu_1 = {"[1].input UE LCR ", "[2].input UE harian ", "[3].input ue visit/minggu"};
 	std::vector<std::string>submenu_2 = {"[1].Laporan Bulanan ","[2].Laporan LCR ","[3].Laporan Stok"};
 
 	if(pilihSubmenu == 1){return submenu_1;}
@@ -58,11 +58,45 @@ void submenu_switch(const int &pilih_proses, const int &pilih_switch){
 	}
 }
 
+
 void menu_navigasi(const int &pilihan){
 	clearScreen();
 	top_header();
 	garis_batas();
 	menu_utama(pilihan);
+}
+
+void proses_pemilihan_submenu(const int &pilih_menu, const int &pilih_submenu){
+
+menu_navigasi(pilih_menu);
+submenu_switch(pilih_menu,pilih_submenu);
+
+//MENU 1
+if(pilih_menu == 1 && pilih_submenu == 1){
+	std::cout << "TODO PROSES INPUT UE LCR\n";	
+}
+
+else if(pilih_menu == 1 && pilih_submenu ==  2){
+	std::cout << "TODO PROSES INPUT UE HARIAN\n";	
+}
+
+else if(pilih_menu == 1 && pilih_submenu == 3){
+	std::cout << "TODO PROSES INPUT UE VISIT/MINGGU\n";	
+}
+
+//MENU 2 
+else if(pilih_menu == 2 && pilih_submenu == 1){
+	std::cout << "TODO PROSES LAPORAN BULANAN\n";	
+}
+
+else if(pilih_menu == 2 && pilih_submenu == 2){
+std::cout << "TODO PROSES LAPORAN LCR\nn";
+}
+
+else if(pilih_menu == 2 && pilih_submenu == 3){
+std::cout << "TODO PROSES LAPORAN STOK\n";
+}
+
 }
 
 void submenu(const int &pilih_menu){
@@ -85,38 +119,17 @@ void submenu(const int &pilih_menu){
 		switch(pilih_submenu){
 			case 1 :
 					{	
-						menu_navigasi(pilih_menu);
-						submenu_switch(pilih_menu,pilih_submenu);
-						if(pilih_menu == 1){
-							std::cout << "TODO PROSES INPUT UE LCR\n";
-						}
-						else if(pilih_menu == 2){
-							std::cout << "test sub menu 2\n";
-						}
+						proses_pemilihan_submenu(pilih_menu,pilih_submenu);
 						break;
 					}
 			case 2 :
 					{	
-						menu_navigasi(pilih_menu);
-						submenu_switch(pilih_menu,pilih_submenu);
-						if(pilih_menu == 1){
-							std::cout << "TODO PROSES INPUT UE HARIAN\n";
-						}
-						else if(pilih_menu == 2){
-							std::cout << "test sub menu 2\n";
-						}
+						proses_pemilihan_submenu(pilih_menu,pilih_submenu);
 						break;
 					}
 			case 3 :
 					{	
-						menu_navigasi(pilih_menu);
-						submenu_switch(pilih_menu,pilih_submenu);
-						if(pilih_menu == 1){
-							std::cout << "TODO PROSES INPUT Part Bongkaran\n";
-						}
-						else if(pilih_menu == 2){
-							std::cout << "test sub menu 2\n";
-						}
+						proses_pemilihan_submenu(pilih_menu,pilih_submenu);
 						break;
 					}
 		}
