@@ -90,7 +90,7 @@ else if(pilih_menu == 2 && pilih_submenu == 1){
 }
 
 else if(pilih_menu == 2 && pilih_submenu == 2){
-std::cout << "TODO PROSES LAPORAN LCR\nn";
+std::cout << "TODO PROSES LAPORAN LCR\n";
 }
 
 else if(pilih_menu == 2 && pilih_submenu == 3){

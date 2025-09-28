@@ -14,7 +14,6 @@ void  PROSES_UTAMA(){
 			std::cout << warna("HOME\n","option");	
 			pilih  = input_angka("Pilih Menu : ");
 			if(pilih == 0){
-				batas_pilih--;
 				std::cout << warna("Apakah ingin keluar/exit ? Tekan Y/n : ", "option");
 				char exit;
 				std::cin >> exit;
@@ -46,20 +45,20 @@ void  PROSES_UTAMA(){
 			default :
 					{
 					menu_navigasi(pilih);
-					std::cout << " batas : " << batas_pilih << std::endl;
-
 					std::cout << warna("Pilihan tidak ada!\nkembali ke Home\n\n", "error");
-					std::cout << warna("HOME\n","option");
 					batas_pilih--;
 					break;
 					}
 		}
 
+
 	}while(batas_pilih != -1 );
 	menu_navigasi(pilih);
-	if(batas_pilih == -1){
+		
+		if(batas_pilih == -1){
 			std::cout << warna("Mohon maaf melebihi batas inputan\n","option");
 		}
+
 	std::cout << "Terima Kasih\n";
 
 }
