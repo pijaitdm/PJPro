@@ -47,8 +47,8 @@ void tampilkan_submenu(const int &menu_id, const int &submenu_aktif){
         daftar_submenu[submenu_aktif - 1] = warna(daftar_submenu[submenu_aktif - 1], "menu");
     }
 
-    for(const auto &item : daftar_submenu){
-        std::cout << item;
+    for(const auto &cetak : daftar_submenu){
+        std::cout << cetak;
     }
     std::cout << std::endl;
 }
@@ -68,7 +68,7 @@ void proses_pemilihan_submenu(const int &pilih_menu, const int &pilih_submenu){
 
 	//MENU 1
 	if(pilih_menu == 1 && pilih_submenu == 1){std::cout << "TODO PROSES INPUT UE LCR\n";}
-	else if(pilih_menu == 1 && pilih_submenu ==  2){std::cout << "TODO PROSES INPUT UE HARIAN\n";}
+	else if(pilih_menu == 1 && pilih_submenu == 2){std::cout << "TODO PROSES INPUT UE HARIAN\n";}
 	else if(pilih_menu == 1 && pilih_submenu == 3){std::cout << "TODO PROSES INPUT UE VISIT/MINGGU\n";}
 
 	//MENU 2 
