@@ -138,23 +138,7 @@ void submenu(const int &pilih_menu){
 			break;
 		}
 
-		switch(pilih_submenu){
-			case 1 :
-					{	
-						proses_pemilihan_submenu(pilih_menu,pilih_submenu);
-						break;
-					}
-			case 2 :
-					{	
-						proses_pemilihan_submenu(pilih_menu,pilih_submenu);
-						break;
-					}
-			case 3 :
-					{	
-						proses_pemilihan_submenu(pilih_menu,pilih_submenu);
-						break;
-					}
-		}
+		proses_pemilihan_submenu(pilih_menu,pilih_submenu);
 
 	}while(batas_pilih_submenu!=0);
 	menu_navigasi(-1);
