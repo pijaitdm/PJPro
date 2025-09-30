@@ -118,6 +118,10 @@ else if(pilih_menu == 3 && pilih_submenu == 2){
 std::cout << "TODO PROSES alat LCR\n";
 }
 
+else{
+	std::cout << warna("pilihan tidak ada\n", "error");
+}
+
 std::cout << "\n";
 }
 
@@ -127,19 +131,17 @@ void submenu(const int &pilih_menu){
 
 	garis_batas(); 
 	int batas_pilih_submenu = 5;
-	do{
+	while(batas_pilih_submenu!=-1){
 		int pilih_submenu = input_angka("Pilih SubMenu : ");
 		if(pilih_submenu > 3){
-			std::cout << warna("pilihan tidak ada\n", "error");
 			batas_pilih_submenu--;
 		}
-
 		else if(pilih_submenu == 0 || batas_pilih_submenu == 0){
 			break;
 		}
 
 		proses_pemilihan_submenu(pilih_menu,pilih_submenu);
 
-	}while(batas_pilih_submenu!=0);
+	}
 	menu_navigasi(-1);
 }	
