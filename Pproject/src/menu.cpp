@@ -63,28 +63,25 @@ void menu_navigasi(const int &pilihan){
 
 void proses_pemilihan_submenu(const int &pilih_menu, const int &pilih_submenu){
 
-menu_navigasi(pilih_menu);
-tampilkan_submenu(pilih_menu,pilih_submenu);
+	menu_navigasi(pilih_menu);
+	tampilkan_submenu(pilih_menu,pilih_submenu);
 
-//MENU 1
-if(pilih_menu == 1 && pilih_submenu == 1){std::cout << "TODO PROSES INPUT UE LCR\n";}
-else if(pilih_menu == 1 && pilih_submenu ==  2){std::cout << "TODO PROSES INPUT UE HARIAN\n";}
-else if(pilih_menu == 1 && pilih_submenu == 3){std::cout << "TODO PROSES INPUT UE VISIT/MINGGU\n";}
+	//MENU 1
+	if(pilih_menu == 1 && pilih_submenu == 1){std::cout << "TODO PROSES INPUT UE LCR\n";}
+	else if(pilih_menu == 1 && pilih_submenu ==  2){std::cout << "TODO PROSES INPUT UE HARIAN\n";}
+	else if(pilih_menu == 1 && pilih_submenu == 3){std::cout << "TODO PROSES INPUT UE VISIT/MINGGU\n";}
 
-//MENU 2 
-else if(pilih_menu == 2 && pilih_submenu == 1){std::cout << "TODO PROSES LAPORAN BULANAN\n";}
-else if(pilih_menu == 2 && pilih_submenu == 2){std::cout << "TODO PROSES LAPORAN LCR\n";}
-else if(pilih_menu == 2 && pilih_submenu == 3){std::cout << "TODO PROSES LAPORAN STOK\n";}
+	//MENU 2 
+	else if(pilih_menu == 2 && pilih_submenu == 1){std::cout << "TODO PROSES LAPORAN BULANAN\n";}
+	else if(pilih_menu == 2 && pilih_submenu == 2){std::cout << "TODO PROSES LAPORAN LCR\n";}
+	else if(pilih_menu == 2 && pilih_submenu == 3){std::cout << "TODO PROSES LAPORAN STOK\n";}
 
-//MENU 3
-else if(pilih_menu == 3 && pilih_submenu == 1){std::cout << "TODO PROSES menghitung shim klep\n";}
-else if(pilih_menu == 3 && pilih_submenu == 2){std::cout << "TODO PROSES alat LCR\n";}
+	//MENU 3
+	else if(pilih_menu == 3 && pilih_submenu == 1){std::cout << "TODO PROSES menghitung shim klep\n";}
+	else if(pilih_menu == 3 && pilih_submenu == 2){std::cout << "TODO PROSES alat LCR\n";}
 
-else{
-	std::cout << warna("pilihan tidak ada\n", "error");
-}
+	else{std::cout << warna("pilihan tidak ada\n", "error");}
 
-std::cout << "\n";
 }
 
 void submenu(const int &pilih_menu){
@@ -95,6 +92,7 @@ void submenu(const int &pilih_menu){
 	int batas_pilih_submenu = 5;
 	while(batas_pilih_submenu!=-1){
 		int pilih_submenu = input_angka("Pilih SubMenu : ");
+		
 		if(pilih_submenu > 3){
 			batas_pilih_submenu--;
 		}
@@ -102,7 +100,9 @@ void submenu(const int &pilih_menu){
 			break;
 		}
 
+		//proses pemihlihan submenu
 		proses_pemilihan_submenu(pilih_menu,pilih_submenu);
+		garis_batas();
 
 	}
 	menu_navigasi(-1);

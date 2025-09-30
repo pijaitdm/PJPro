@@ -11,6 +11,7 @@ void  PROSES_UTAMA(){
 		
 	do{
 			std::cout << warna("HOME\n","option");	
+			garis_batas();
 			pilih  = input_angka("Pilih Menu : ");
 			if(pilih == 0){
 				std::cout << warna("Apakah ingin keluar/exit ? Tekan Y/n : ", "option");
@@ -20,7 +21,6 @@ void  PROSES_UTAMA(){
 					break;}
 					else{continue;}
 			}
-
 			menu_navigasi(pilih);
 				if(pilih == 1){
 					submenu(1);
