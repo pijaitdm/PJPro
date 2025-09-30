@@ -67,40 +67,18 @@ menu_navigasi(pilih_menu);
 tampilkan_submenu(pilih_menu,pilih_submenu);
 
 //MENU 1
-if(pilih_menu == 1 && pilih_submenu == 1){
-	std::cout << "TODO PROSES INPUT UE LCR\n";	
-}
-
-else if(pilih_menu == 1 && pilih_submenu ==  2){
-	std::cout << "TODO PROSES INPUT UE HARIAN\n";	
-}
-
-else if(pilih_menu == 1 && pilih_submenu == 3){
-	std::cout << "TODO PROSES INPUT UE VISIT/MINGGU\n";	
-}
+if(pilih_menu == 1 && pilih_submenu == 1){std::cout << "TODO PROSES INPUT UE LCR\n";}
+else if(pilih_menu == 1 && pilih_submenu ==  2){std::cout << "TODO PROSES INPUT UE HARIAN\n";}
+else if(pilih_menu == 1 && pilih_submenu == 3){std::cout << "TODO PROSES INPUT UE VISIT/MINGGU\n";}
 
 //MENU 2 
-else if(pilih_menu == 2 && pilih_submenu == 1){
-	std::cout << "TODO PROSES LAPORAN BULANAN\n";	
-}
-
-else if(pilih_menu == 2 && pilih_submenu == 2){
-std::cout << "TODO PROSES LAPORAN LCR\n";
-}
-
-else if(pilih_menu == 2 && pilih_submenu == 3){
-std::cout << "TODO PROSES LAPORAN STOK\n";
-}
+else if(pilih_menu == 2 && pilih_submenu == 1){std::cout << "TODO PROSES LAPORAN BULANAN\n";}
+else if(pilih_menu == 2 && pilih_submenu == 2){std::cout << "TODO PROSES LAPORAN LCR\n";}
+else if(pilih_menu == 2 && pilih_submenu == 3){std::cout << "TODO PROSES LAPORAN STOK\n";}
 
 //MENU 3
-else if(pilih_menu == 3 && pilih_submenu == 1){
-std::cout << "TODO PROSES menghitung shim klep\n";
-}
-
-
-else if(pilih_menu == 3 && pilih_submenu == 2){
-std::cout << "TODO PROSES alat LCR\n";
-}
+else if(pilih_menu == 3 && pilih_submenu == 1){std::cout << "TODO PROSES menghitung shim klep\n";}
+else if(pilih_menu == 3 && pilih_submenu == 2){std::cout << "TODO PROSES alat LCR\n";}
 
 else{
 	std::cout << warna("pilihan tidak ada\n", "error");
