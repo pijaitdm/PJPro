@@ -3,7 +3,7 @@
 
 void top_header(){
 	std::string  header = "[ " + waktu("hari") + " || " + "PJ Project Management Laporan" + " || " + waktu("tanggal") + " ]";
-	std::cout << warna(header, "") << std::endl<<std::endl;;
+	std::cout << warna(header, "") << std::endl<<std::endl;
 }
 
 void menu_utama(const int &pilih_menu){
@@ -40,33 +40,17 @@ std::vector<std::string> submenu_arr(const int &pilihSubmenu){
 	return {"kosong"};
 }
 
-void submenu_switch(const int &pilih_proses, const int &pilih_switch){
-	if(pilih_proses == 1){
-		std::vector<std::string> submenu_list1 = submenu_arr(pilih_proses);
-		if(pilih_switch >= 1 && pilih_switch <= 3){
-			submenu_list1[pilih_switch -1] = warna(submenu_list1[pilih_switch -1],"menu");
-		}
-		for(const auto &cetak : submenu_list1){std::cout << cetak;}
-			std::cout << std::endl;
-	}
+void tampilkan_submenu(const int &menu_id, const int &submenu_aktif){
+    std::vector<std::string> daftar_submenu = submenu_arr(menu_id);
 
-	else if(pilih_proses == 2){
-		std::vector<std::string> submenu_list2 = submenu_arr(pilih_proses);
-		if(pilih_switch >= 1 && pilih_switch <= 3){
-			submenu_list2[pilih_switch -1] = warna(submenu_list2[pilih_switch -1],"menu");
-		}
-		for(const auto &cetak : submenu_list2){std::cout << cetak;}
-			std::cout << std::endl;
-	}
+    if(submenu_aktif >= 1 && submenu_aktif <= daftar_submenu.size()){
+        daftar_submenu[submenu_aktif - 1] = warna(daftar_submenu[submenu_aktif - 1], "menu");
+    }
 
-	else if(pilih_proses == 3){
-		std::vector<std::string> submenu_list3 = submenu_arr(pilih_proses);
-		if(pilih_switch >= 1 && pilih_switch <= 3){
-			submenu_list3[pilih_switch -1] = warna(submenu_list3[pilih_switch -1],"menu");
-		}
-		for(const auto &cetak : submenu_list3){std::cout << cetak;}
-			std::cout << std::endl;
-	}
+    for(const auto &item : daftar_submenu){
+        std::cout << item;
+    }
+    std::cout << std::endl;
 }
 
 
@@ -80,7 +64,7 @@ void menu_navigasi(const int &pilihan){
 void proses_pemilihan_submenu(const int &pilih_menu, const int &pilih_submenu){
 
 menu_navigasi(pilih_menu);
-submenu_switch(pilih_menu,pilih_submenu);
+tampilkan_submenu(pilih_menu,pilih_submenu);
 
 //MENU 1
 if(pilih_menu == 1 && pilih_submenu == 1){
@@ -127,7 +111,7 @@ std::cout << "\n";
 
 void submenu(const int &pilih_menu){
 
-	submenu_switch(pilih_menu,-1);
+	tampilkan_submenu(pilih_menu,-1);
 
 	garis_batas(); 
 	int batas_pilih_submenu = 5;
