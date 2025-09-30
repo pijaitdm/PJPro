@@ -32,9 +32,11 @@ void menu_utama(const int &pilih_menu){
 std::vector<std::string> submenu_arr(const int &pilihSubmenu){
 	std::vector<std::string>submenu_1 = {"[1].input UE LCR ", "[2].input UE harian ", "[3].input ue visit/minggu"};
 	std::vector<std::string>submenu_2 = {"[1].Laporan Bulanan ","[2].Laporan LCR ","[3].Laporan Stok"};
+	std::vector<std::string>submenu_3 = {"[1].Menghitung Shim Klep","[2].Alat LCR"};
 
 	if(pilihSubmenu == 1){return submenu_1;}
 	else if(pilihSubmenu == 2){return submenu_2;}
+	else if(pilihSubmenu == 3){return submenu_3;}
 	return {"kosong"};
 }
 
@@ -54,6 +56,15 @@ void submenu_switch(const int &pilih_proses, const int &pilih_switch){
 			submenu_list2[pilih_switch -1] = warna(submenu_list2[pilih_switch -1],"menu");
 		}
 		for(const auto &cetak : submenu_list2){std::cout << cetak;}
+			std::cout << std::endl;
+	}
+
+	else if(pilih_proses == 3){
+		std::vector<std::string> submenu_list3 = submenu_arr(pilih_proses);
+		if(pilih_switch >= 1 && pilih_switch <= 3){
+			submenu_list3[pilih_switch -1] = warna(submenu_list3[pilih_switch -1],"menu");
+		}
+		for(const auto &cetak : submenu_list3){std::cout << cetak;}
 			std::cout << std::endl;
 	}
 }
@@ -97,6 +108,17 @@ else if(pilih_menu == 2 && pilih_submenu == 3){
 std::cout << "TODO PROSES LAPORAN STOK\n";
 }
 
+//MENU 3
+else if(pilih_menu == 3 && pilih_submenu == 1){
+std::cout << "TODO PROSES menghitung shim klep\n";
+}
+
+
+else if(pilih_menu == 3 && pilih_submenu == 2){
+std::cout << "TODO PROSES alat LCR\n";
+}
+
+std::cout << "\n";
 }
 
 void submenu(const int &pilih_menu){

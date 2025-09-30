@@ -2,7 +2,6 @@
 #include "menu.hpp"
 
 
-
 void  PROSES_UTAMA(){
 	
 	menu_navigasi(-1);
@@ -22,36 +21,22 @@ void  PROSES_UTAMA(){
 					else{continue;}
 			}
 
-		switch(pilih){
-			case 1 :
-					{
-					menu_navigasi(pilih);
+			menu_navigasi(pilih);
+				if(pilih == 1){
 					submenu(1);
-					break;
-					}
-			case 2 :
-					{
-					menu_navigasi(pilih);
+				}
+				else if(pilih == 2){
 					submenu(2);
-					break;
-					}
-			case 3 :
-					{
-					menu_navigasi(pilih);
-					std::cout << warna("Ini menu 3 !!\n", "option");
-					break;
-					}
-
-			default :
-					{
-					menu_navigasi(pilih);
+				}
+				else if(pilih == 3){
+					submenu(3);
+				}
+				else{
 					std::cout << warna("Pilihan tidak ada!\nkembali ke Home\n\n", "error");
 					batas_pilih--;
-					break;
-					}
-		}
-
-
+					
+				}
+					
 	}while(batas_pilih != -1 );
 	menu_navigasi(pilih);
 		
