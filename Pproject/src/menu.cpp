@@ -24,6 +24,7 @@ void menu_utama(const int &pilih_menu){
 	std::cout << menu_option[0];
 	for(int i =  0; i < 3 ; ++i){std::cout << menu_list[i];}
 	std::cout << menu_option[1] << std::endl;
+	garis_batas();
 	
 }
 
@@ -43,13 +44,15 @@ std::vector<std::string> submenu_arr(const int &pilihSubmenu){
 void tampilkan_submenu(const int &menu_id, const int &submenu_aktif){
     std::vector<std::string> daftar_submenu = submenu_arr(menu_id);
 
-    if(submenu_aktif >= 1 && submenu_aktif <= daftar_submenu.size()){
+    int ukuran_submenu = daftar_submenu.size();
+    if(submenu_aktif >= 1 && submenu_aktif <= ukuran_submenu ){
         daftar_submenu[submenu_aktif - 1] = warna(daftar_submenu[submenu_aktif - 1], "menu");
     }
 
-    for(const auto &cetak : daftar_submenu){
-        std::cout << cetak;
+    for(int i = 0 ; i < ukuran_submenu ; ++i){
+    	std::cout << daftar_submenu[i];
     }
+
     std::cout << std::endl;
 }
 
@@ -65,7 +68,7 @@ void proses_pemilihan_submenu(const int &pilih_menu, const int &pilih_submenu){
 
 	menu_navigasi(pilih_menu);
 	tampilkan_submenu(pilih_menu,pilih_submenu);
-
+	
 	//MENU 1
 	if(pilih_menu == 1 && pilih_submenu == 1){std::cout << "TODO PROSES INPUT UE LCR\n";}
 	else if(pilih_menu == 1 && pilih_submenu == 2){std::cout << "TODO PROSES INPUT UE HARIAN\n";}
