@@ -44,14 +44,19 @@ void proses_shimKlep(){
 	while(exit != 0){
 		std::cout << warna("\nUntuk Klep [1].IN / [2].EX = ", "option");
 		int pilih = input_angka("");
+
 			if(pilih == 1 || pilih == 2){
 				penghitung_shim(pilih);
 			}
 
 			else{
 				std::cout << warna("Pilihan tidak ada\n", "error");
+
 			}
 		exit = input_angka("lagi tekan ( 1 ) : ");
+		if(exit == 0){
+			std::cout << "kembali ke submenu\n";
+		}
 
 	}
 	garis_batas();

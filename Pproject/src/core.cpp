@@ -13,7 +13,7 @@ void  PROSES_UTAMA(){
 			std::cout << warna("HOME\n","option");	
 			garis_batas();
 			pilih  = input_angka("Pilih Menu : ");
-				if(pilih == 0){
+				if(pilih <= 0){
 					std::cout << warna("Apakah ingin keluar/exit ? Tekan Y/n : ", "option");
 					char exit;
 					std::cin >> exit;

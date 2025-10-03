@@ -97,7 +97,7 @@ void submenu(const int &pilih_menu){
 	while(batas_pilih_submenu!=-1){
 		int pilih_submenu = input_angka("Pilih SubMenu : ");
 		
-		if(pilih_submenu > 3){
+		if(pilih_submenu > 3 || pilih_submenu < 0){
 			batas_pilih_submenu--;
 		}
 		else if(pilih_submenu == 0 || batas_pilih_submenu == 0){
