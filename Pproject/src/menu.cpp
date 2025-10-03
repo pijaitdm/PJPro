@@ -94,13 +94,13 @@ void submenu(const int &pilih_menu){
 
 	garis_batas(); 
 	int batas_pilih_submenu = 5;
-	while(batas_pilih_submenu!=-1){
+	while(true){
 		int pilih_submenu = input_angka("Pilih SubMenu : ");
 		
-		if(pilih_submenu > 3 || pilih_submenu < 0){
+		if(pilih_submenu > 3 ){
 			batas_pilih_submenu--;
 		}
-		else if(pilih_submenu == 0 || batas_pilih_submenu == 0){
+		else if(pilih_submenu <= 0 || batas_pilih_submenu == 0){
 			break;
 		}
 
