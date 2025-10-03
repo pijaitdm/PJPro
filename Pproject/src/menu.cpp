@@ -1,5 +1,6 @@
 #include <vector>
 #include "headers.hpp"
+#include "shimklep.hpp"
 
 void top_header(){
 	std::string  header = "[ " + waktu("hari") + " || " + "PJ Project Management Laporan" + " || " + waktu("tanggal") + " ]";
@@ -33,7 +34,7 @@ void menu_utama(const int &pilih_menu){
 std::vector<std::string> submenu_arr(const int &pilihSubmenu){
 	std::vector<std::string>submenu_1 = {"[1].input UE LCR ", "[2].input UE harian ", "[3].input ue visit/minggu"};
 	std::vector<std::string>submenu_2 = {"[1].Laporan Bulanan ","[2].Laporan LCR ","[3].Laporan Stok"};
-	std::vector<std::string>submenu_3 = {"[1].Menghitung Shim Klep","[2].Alat LCR"};
+	std::vector<std::string>submenu_3 = {"[1].Menghitung Shim Klep ","[2].Alat LCR"};
 
 	if(pilihSubmenu == 1){return submenu_1;}
 	else if(pilihSubmenu == 2){return submenu_2;}
@@ -80,8 +81,8 @@ void proses_pemilihan_submenu(const int &pilih_menu, const int &pilih_submenu){
 	else if(pilih_menu == 2 && pilih_submenu == 3){std::cout << "TODO PROSES LAPORAN STOK\n";}
 
 	//MENU 3
-	else if(pilih_menu == 3 && pilih_submenu == 1){std::cout << "TODO PROSES menghitung shim klep\n";}
-	else if(pilih_menu == 3 && pilih_submenu == 2){std::cout << "TODO PROSES alat LCR\n";}
+	else if(pilih_menu == 3 && pilih_submenu == 1){proses_shimKlep();}
+	else if(pilih_menu == 3 && pilih_submenu == 2){std::cout << "TODO PROSES ALAT LCR\n";}
 
 	else{std::cout << warna("pilihan tidak ada\n", "error");}
 

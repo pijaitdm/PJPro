@@ -4,7 +4,9 @@
 
 #include <iostream>
 #include <string>
-
+#include <filesystem>
+#include <sstream>
+#include <fstream>
 
 //fungsi pembantu
 
